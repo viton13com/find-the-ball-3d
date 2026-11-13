@@ -4,7 +4,7 @@
 
 A three-level cup-shuffle puzzle, rendered live in 3D.
 
-[Live demo](https://viton13bussiness-collab.github.io/find-the-ball-3d/)  ·  [viton13.com](https://viton13.com)
+[Live demo](https://viton13com.github.io/find-the-ball-3d/)  ·  [viton13.com](https://viton13.com)
 
 <br>
 
