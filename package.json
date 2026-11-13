@@ -1,0 +1,14 @@
+{
+  "name": "find-the-ball-3d",
+  "private": true,
+  "type": "module",
+  "description": "Find the Ball — a three-level 3D cup-shuffle puzzle film in three.js (9:16)",
+  "scripts": {
+    "start": "npx serve .",
+    "sound": "node tools/sound.mjs",
+    "render": "node tools/render.mjs --name=find-the-ball-en --size=1080x1920 --lang=en --sound=out/sound.wav"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^25.12.0"
+  }
+}

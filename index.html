@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Find the Ball</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  html, body { margin: 0; height: 100%; background: #07080b; overflow: hidden; }
+  #stage, #stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .ov { position: absolute; left: 0; right: 0; pointer-events: none; color: #fff; text-align: center; font-family: "SF Pro Display", "Helvetica Neue", Arial, sans-serif; will-change: opacity, transform; }
+  #vig { inset: 0; background: radial-gradient(120% 75% at 50% 48%, rgba(0,0,0,0) 45%, rgba(0,0,0,.62) 100%); }
+  #title { top: 8.5%; }
+  #title h1 { margin: 0; font-weight: 900; font-size: 13.2vw; line-height: .92; letter-spacing: -.035em; }
+  #title h1 .r { color: #ff3b30; } #title h1 .b { color: #3d7bff; }
+  #title p { margin: 3.2vw 0 0; font-weight: 500; font-size: 4.3vw; letter-spacing: .01em; color: rgba(255,255,255,.72); }
+  #pill { top: 9.5%; }
+  #pill span { display: inline-flex; align-items: center; gap: 2.2vw; padding: 2.2vw 4.6vw; border-radius: 99vw; background: rgba(255,255,255,.08); border: .25vw solid rgba(255,255,255,.14); backdrop-filter: blur(6px);
+    font-weight: 700; font-size: 3.6vw; letter-spacing: .14em; text-transform: uppercase; }
+  #pill i { width: 2.4vw; height: 2.4vw; border-radius: 50%; background: var(--c); box-shadow: 0 0 2.4vw var(--c); }
+  #dots { top: 15.2%; display: flex; justify-content: center; gap: 1.6vw; }
+  #dots b { width: 9vw; height: .9vw; border-radius: 1vw; background: rgba(255,255,255,.16); overflow: hidden; position: relative; }
+  #dots b u { position: absolute; inset: 0; background: var(--c, #fff); transform-origin: left; transform: scaleX(0); }
+  #msg { top: 20%; padding: 0 7vw; font-weight: 800; font-size: 7.6vw; line-height: 1.04; letter-spacing: -.025em; }
+  #msg .r { color: #ff3b30; } #msg .b { color: #4a86ff; }
+  #sub2 { top: 30.5%; font-weight: 500; font-size: 4.2vw; color: rgba(255,255,255,.62); letter-spacing: .02em; }
+  .num { position: absolute; width: 11vw; height: 11vw; margin: -5.5vw 0 0 -5.5vw; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.1); border: .3vw solid rgba(255,255,255,.35);
+    font: 800 5.6vw/1 "SF Pro Display", "Helvetica Neue", sans-serif; color: #fff; }
+  .num.win { background: var(--c); border-color: #fff; box-shadow: 0 0 5vw var(--c); }
+  #count { top: 79%; display: grid; place-items: center; }
+  #count svg { width: 22vw; height: 22vw; }
+  #count .d { position: absolute; font-weight: 900; font-size: 9vw; }
+  #ans { top: 77.5%; font-weight: 900; font-size: 11vw; letter-spacing: -.03em; }
+  #ans small { display: block; margin-top: 1.5vw; font-weight: 600; font-size: 4.4vw; letter-spacing: .02em; color: rgba(255,255,255,.7); }
+  #end { top: 77%; }
+  #end h2 { margin: 0; font-weight: 900; font-size: 10.5vw; letter-spacing: -.03em; }
+  #end p { margin: 2.4vw 0 0; font-weight: 600; font-size: 5vw; color: rgba(255,255,255,.8); }
+  #brand { bottom: 4.2%; font-weight: 800; font-size: 3.4vw; letter-spacing: .42em; color: rgba(255,255,255,.55); }
+</style>
+<script type="importmap">{"imports":{"three":"./vendor/three/build/three.module.js","three/addons/":"./vendor/three/jsm/"}}</script>
+</head>
+<body>
+<div id="stage"></div>
+<div class="ov" id="vig"></div>
+<div class="ov" id="title"><h1></h1><p></p></div>
+<div class="ov" id="pill"><span><i></i><em></em></span></div>
+<div class="ov" id="dots"><b><u></u></b><b><u></u></b><b><u></u></b></div>
+<div class="ov" id="msg"></div>
+<div class="ov" id="sub2"></div>
+<div class="ov" id="nums" style="inset:0"></div>
+<div class="ov" id="count"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="5"/><circle id="arc" cx="50" cy="50" r="44" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" transform="rotate(-90 50 50)" stroke-dasharray="276.5" stroke-dashoffset="0"/></svg><div class="d"></div></div>
+<div class="ov" id="ans"></div>
+<div class="ov" id="end"><h2></h2><p></p></div>
+<div class="ov" id="brand">VITON13</div>
+<script type="module" src="./js/main.js"></script>
+</body>
+</html>
